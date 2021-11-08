@@ -1,7 +1,7 @@
 package com.ciclo4.tamasys.controlador;
 
-import com.ciclo4.tamasys.modelo.sociosModelo;
-import com.ciclo4.tamasys.vista.sociosRepositorio;
+import com.ciclo4.tamasys.modelo.conductoresModelo;
+import com.ciclo4.tamasys.vista.conductoresRepositorio;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,41 +17,36 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
 
-/**
- *
- * @author Leandro Aguirre
- */
-
 @RestController
 @CrossOrigin(origins = "*", methods = {RequestMethod.POST, RequestMethod.GET, RequestMethod.DELETE, RequestMethod.PUT})
 @RequestMapping("/api/tamasys")
-public class sociosControlador {
+public class conductoresControlador {
     
     @Autowired
-    private sociosRepositorio repository;
+    private conductoresRepositorio repository;
     
-    @PostMapping("/socios/crear")
-    public sociosModelo crearSocio(@RequestBody @Validated sociosModelo s){
+    @PostMapping("/conductores/")
+    public conductoresModelo crearConductor(@RequestBody @Validated conductoresModelo s){
         return repository.insert(s);
     }
     
-    @GetMapping("/socios/consultar")
-    public List<sociosModelo> consultarSocios(){
+    @GetMapping("/conductores/")
+    public List<conductoresModelo> consultarConductores(){
         return repository.findAll();
     }
     
-    @GetMapping("/socios/consultar/{id}")
-    public Optional<sociosModelo> consultarSociosId(@PathVariable String id){
+    @GetMapping("/conductores/{id}")
+    public Optional<conductoresModelo> consultarConductoresId(@PathVariable String id){
         return repository.findById(id);
     }
     
-    @PutMapping("/socios/actualizar/{id}")
-    public sociosModelo actualizarSocios(@PathVariable String id, @RequestBody @Validated sociosModelo s){
+    @PutMapping("/conductores/{id}")
+    public conductoresModelo actualizarConductores(@PathVariable String id, @RequestBody @Validated conductoresModelo s){
         return repository.save(s);
     }
     
-    @DeleteMapping("/socios/eliminar/{id}")
-    public void eliminarSocios(@PathVariable String id){
+    @DeleteMapping("/conductores/{id}")
+    public void eliminarConductores(@PathVariable String id){
         repository.deleteById(id);
     }    
 }
