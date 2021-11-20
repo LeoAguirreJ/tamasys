@@ -40,7 +40,7 @@ public class vehiculosControlador {
         return repository.insert(vehiculo);
     }
     
-    //Consultar Vehiculos
+    //Consultar todos los Vehiculos
     @GetMapping("/vehiculos/consultar")
     public List<vehiculosModelo> consultarVehiculos(){
         return repository.findAll();
