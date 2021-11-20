@@ -18,18 +18,18 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class pagosModelo {
     
     @Id
-    private ObjectId id;
+    private String id;
     private String idPago;
     private String docSocio;
     private String placa;
-    private Date fechaPago;
+    private String fechaPago;
     private String valorPago;
 
-    public ObjectId getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(ObjectId id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -46,7 +46,7 @@ public class pagosModelo {
         return placa;
     }
 
-    public Date getFechaPago() {
+    public String getFechaPago() {
         return fechaPago;
     }
 
@@ -66,7 +66,7 @@ public class pagosModelo {
         this.placa = placa;
     }
 
-    public void setFechaPago(Date fechaPago) {
+    public void setFechaPago(String fechaPago) {
         this.fechaPago = fechaPago;
     }
 

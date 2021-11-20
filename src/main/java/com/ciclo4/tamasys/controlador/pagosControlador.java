@@ -35,28 +35,28 @@ public class pagosControlador {
     @Autowired
     private pagosRepositorio repository;
     
-    @PostMapping("/pagos/")
+    @PostMapping("/pagos/crear")
     public pagosModelo crearPago(@RequestBody @Validated pagosModelo pago){
         return repository.insert(pago);
     }
     
-    @GetMapping("/pagos/")
+    @GetMapping("/pagos/consultar")
     public List<pagosModelo> consultarPagos(){
         return repository.findAll();
     }
     
-    @GetMapping("/pagos/{id}")
-    public Optional<pagosModelo> consultarPagosId(@PathVariable(value="id") ObjectId id){
+    @GetMapping("/pagos/consultar/{id}")
+    public Optional<pagosModelo> consultarPagosId(@PathVariable String id){
         return repository.findById(id);
     }
     
-    @PutMapping("/pagos/{id}")
-    public pagosModelo actualizarPagos(@PathVariable(value="id") ObjectId id, @RequestBody @Validated pagosModelo pago){
+    @PutMapping("/pagos/actualizar/{id}")
+    public pagosModelo actualizarPagos(@PathVariable String id, @RequestBody @Validated pagosModelo pago){
         return repository.save(pago);
     }
     
-    @DeleteMapping("/pagos/{id}")
-    public void eliminarPagos(@PathVariable(value="id") ObjectId id){
+    @DeleteMapping("/pagos/eliminar/{id}")
+    public void eliminarPagos(@PathVariable String id){
         repository.deleteById(id);
     }
 }
