@@ -22,8 +22,8 @@ public class vehiculosModelo {
     private String docConductor;
     private String placa;
     private String numeroTaxi;
-    private Date  soat;
-    private Date  tecnicoMecanica;
+    private String  soat;
+    private String  tecnicoMecanica;
 
     public String getId() {
         return id;
@@ -65,19 +65,19 @@ public class vehiculosModelo {
         this.numeroTaxi = numeroTaxi;
     }
 
-    public Date getSoat() {
+    public String getSoat() {
         return soat;
     }
 
-    public void setSoat(Date soat) {
+    public void setSoat(String soat) {
         this.soat = soat;
     }
 
-    public Date getTecnicoMecanica() {
+    public String getTecnicoMecanica() {
         return tecnicoMecanica;
     }
 
-    public void setTecnicoMecanica(Date tecnicoMecanica) {
+    public void setTecnicoMecanica(String tecnicoMecanica) {
         this.tecnicoMecanica = tecnicoMecanica;
     }
 }

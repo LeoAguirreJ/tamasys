@@ -6,6 +6,7 @@
 package com.ciclo4.tamasys.vista;
 
 import com.ciclo4.tamasys.modelo.vehiculosModelo;
+import org.bson.types.ObjectId;
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 

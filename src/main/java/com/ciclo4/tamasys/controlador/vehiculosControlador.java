@@ -34,27 +34,32 @@ public class vehiculosControlador {
    @Autowired
    private vehiculosRepositorio repository;
     
-    @PostMapping("/vehiculos/")
-    public vehiculosModelo crearVehiculo(@RequestBody @Validated vehiculosModelo s){
-        return repository.insert(s);
+    //Insertar Vehiculos
+    @PostMapping("/vehiculos/crear")
+    public vehiculosModelo crearVehiculo(@RequestBody @Validated vehiculosModelo vehiculo){
+        return repository.insert(vehiculo);
     }
     
-    @GetMapping("/vehiculos/")
+    //Consultar Vehiculos
+    @GetMapping("/vehiculos/consultar")
     public List<vehiculosModelo> consultarVehiculos(){
         return repository.findAll();
     }
     
-    @GetMapping("/vehiculos/{id}")
+    //Consultar Vehiculos Id
+    @GetMapping("/vehiculos/consultar/{id}")
     public Optional<vehiculosModelo> consultarVehiculosId(@PathVariable String id){
         return repository.findById(id);
     }
     
-    @PutMapping("/vehiculos/{id}")
+    //Actualizar Vehiculos
+    @PutMapping("/vehiculos/actualizar/{id}")
     public vehiculosModelo actualizarVehiculos(@PathVariable String id, @RequestBody @Validated vehiculosModelo s){
         return repository.save(s);
     }
     
-    @DeleteMapping("/vehiculos/{id}")
+    //Eliminar Vehiculos
+    @DeleteMapping("/vehiculos/eliminar/{id}")
     public void eliminarVehiculos(@PathVariable String id){
         repository.deleteById(id);
     }    
