@@ -9,7 +9,6 @@ import com.ciclo4.tamasys.modelo.pagosModelo;
 import com.ciclo4.tamasys.vista.pagosRepositorio;
 import java.util.List;
 import java.util.Optional;
-import org.bson.types.ObjectId;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.CrossOrigin;
