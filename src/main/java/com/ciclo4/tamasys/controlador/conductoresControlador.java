@@ -25,27 +25,27 @@ public class conductoresControlador {
     @Autowired
     private conductoresRepositorio repository;
     
-    @PostMapping("/conductores/")
+    @PostMapping("/conductores/crear/")
     public conductoresModelo crearConductor(@RequestBody @Validated conductoresModelo s){
         return repository.insert(s);
     }
     
-    @GetMapping("/conductores/")
+    @GetMapping("/conductores/consultar/")
     public List<conductoresModelo> consultarConductores(){
         return repository.findAll();
     }
     
-    @GetMapping("/conductores/{id}")
+    @GetMapping("/conductores/consultar/{id}")
     public Optional<conductoresModelo> consultarConductoresId(@PathVariable String id){
         return repository.findById(id);
     }
     
-    @PutMapping("/conductores/{id}")
+    @PutMapping("/conductores/actualizar/{id}")
     public conductoresModelo actualizarConductores(@PathVariable String id, @RequestBody @Validated conductoresModelo s){
         return repository.save(s);
     }
     
-    @DeleteMapping("/conductores/{id}")
+    @DeleteMapping("/conductores/eliminar/{id}")
     public void eliminarConductores(@PathVariable String id){
         repository.deleteById(id);
     }    
