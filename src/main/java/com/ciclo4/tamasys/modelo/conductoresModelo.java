@@ -12,7 +12,7 @@ public class conductoresModelo {
     private String documento;
     private String telefono;
     private String email;
-    private Date licenciaconducir;
+    private String licenciaconducir;
 
     @Id
     private String id;
@@ -65,11 +65,11 @@ public class conductoresModelo {
         this.email = email;
     }
 
-    public Date getLicenciaconducir() {
+    public String getLicenciaconducir() {
         return licenciaconducir;
     }
 
-    public void setLicenciaconducir(Date licenciaconducir) {
+    public void setLicenciaconducir(String licenciaconducir) {
         this.licenciaconducir = licenciaconducir;
     }
 
